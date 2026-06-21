@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/gliderlabs/ssh"
@@ -46,5 +47,8 @@ func main() {
 	// 2. Start the server and listen on a port
 	log.Println("Starting SSH server on port 2222...")
 
-	log.Fatal(ssh.ListenAndServe(":2222", nil))
+	// log.Fatal(ssh.ListenAndServe(":2222", nil))
+	// replace log.Fatal(ssh.ListenAndServe(":2222", nil))
+	addr := ":" + os.Getenv("PORT")
+	log.Fatal(ssh.ListenAndServe(addr, nil))
 }
