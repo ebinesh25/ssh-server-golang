@@ -25,14 +25,19 @@ ssh -p 2200 localhost
 
 ```text
 ls /
+tree /
 cat about.json
 cat contact.json
 cd blogs
 ls
 cat from-training-models-to-editing-their-weights.md
+cd ..
+open blogs/from-training-models-to-editing-their-weights.md
 ```
 
-Available commands are `ls [path]`, `cd [path]`, `pwd`, `cat <file>`, `help`, `clear`, and `exit`. Blog articles show their title, summary, reading time, and a full URL that terminal clients can open as a link.
+The terminal opens with a colored welcome banner. Section names and directories are colored, and `tree` draws the full portfolio layout. `cd` supports absolute and relative paths, `..`, and `~` to return to the root. Use `sections` for a quick overview and `banner` to bring back the welcome card. Blog cards include clickable links in terminals that support OSC 8 hyperlinks, with the URL still visible for other clients.
+
+Available commands are `sections`, `tree [path]`, `ls [path]`, `cd [path]`, `pwd`, `cat <file>`, `open <blog.md>`, `banner`, `help`, `clear`, and `exit`.
 
 The portfolio JSON is fetched once when the server starts. If that request fails, the server stays available with basic identity and contact files. Restart the server to pick up changes from the website.
 
