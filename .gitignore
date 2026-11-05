@@ -1,6 +1,7 @@
 # Go build output
 /minimal-ssh-server
 /dist/
+/ssh_host_ed25519
 
 # Environment and local configuration
 .env
